@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --dark-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --text-main: #0f172a;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+/* Fondo animado Aurora pastel */
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #f0f9ff, #e0e7ff, #f3e8ff, #ecfdf5);
+  background-size: 400% 400%;
+  animation: auroraGradient 5s ease infinite;
+  background-attachment: fixed;
+}
+
+@keyframes auroraGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Envoltorio de pantalla principal */
+.landing-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.landing-header .shield-icon {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.landing-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 10px 0;
+}
+
+.landing-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Rejilla de Tarjetas Separadas */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 950px;
+  margin-bottom: 30px;
+}
+
+.module-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.12);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.module-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.module-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.module-card.comerciante { border-top: 5px solid #10b981; }
+.module-card.comerciante h3 { color: #059669; }
+
+.module-card.admin { border-top: 5px solid #f59e0b; }
+.module-card.admin h3 { color: #d97706; }
+
+.module-card.pnp { border-top: 5px solid #2563eb; }
+.module-card.pnp h3 { color: #1d4ed8; }
+
+.module-card.essalud { border-top: 5px solid #0284c7; }
+.module-card.essalud h3 { color: #0369a1; }
+
+.reset-container {
+  margin-top: 10px;
+}
+
+.btn-reset {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1.5px dashed #cbd5e1;
+  color: #64748b;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background: #ffffff;
+  color: #334155;
+  border-color: #94a3b8;
+}
+
+/* Modal y Contenedores */
+.mercado-container {
+  padding: 32px;
+  max-width: 1000px;
+  margin: 30px auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.crumb {
+  font-family: monospace;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.mercado-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.fld {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.fld label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.fld .in {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.fld .in:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.abtn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.abtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
